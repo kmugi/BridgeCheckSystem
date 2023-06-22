@@ -13,6 +13,23 @@ public:
 		Strengthen,		// 加固
 		Renovation,		// 改造
 	};
+	//set函数
+	void setTime(QDateTime time) { time_ = time; }
+	void setType(RemedialActionType type) { type_ = type; }
+	void setRemedialActionReason(QString remedialActionReason) { remedialActionReason_ = remedialActionReason; }
+	void setRemedialActionScope(QString remedialActionScope) { remedialActionScope_ = remedialActionScope; }
+	void setProjectCost(uint32_t projectCost) { projectCost_ = projectCost; }
+	void setFundingSource(QString fundingSource) { fundingSource_ = fundingSource; }
+	void setRAQA(QString RAQA) { RAQA_ = RAQA; }
+	//get函数
+	QDateTime getTime() const { return time_; }
+	RemedialActionType getType() const { return type_; }
+	QString getRemedialActionReason() const { return remedialActionReason_; }
+	QString getRemedialActionScope() const { return remedialActionScope_; }
+	uint32_t getProjectCost() const { return projectCost_; }
+	QString getFundingSource() const { return fundingSource_; }
+	QString getRAQA() const { return RAQA_; }
+
 
 private:
 	QDateTime time_;
