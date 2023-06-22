@@ -3,6 +3,15 @@
 #include <QString>
 #include <QDateTime>
 
+#define GAS(type, funcname, valname) \
+void set##funcname(type valname) noexcept { valname##_ = valname; } \
+type get##funcname() const noexcept { return valname##_; }
+
+#define GASR(type, funcname, valname) \
+void set##funcname(const type& valname) noexcept { valname##_ = valname; } \
+void set##funcname(type&& valname) noexcept { valname##_ = std::move(valname); } \
+type get##funcname() const noexcept { return valname##_; }
+
 // 行政识别数据
 // administrative identification data
 class ADMID {
@@ -87,9 +96,16 @@ public:
 	void setRouteLevel(RouteLevel routeLevel) noexcept { routeLevel_ = routeLevel; }
 	RouteLevel getRouteLevel() const noexcept { return routeLevel_; }
 
+	void setFuncType(FunctionType funcType) noexcept { funcType_ = funcType; }
+	FunctionType getFuncType() const noexcept { return funcType_; }
+
 	void setLnglat(const QPair<float, float>& lnglat) noexcept { lnglat_ = lnglat; }
 	void setLnglat(QPair<float, float>&& lnglat) noexcept { lnglat_ = std::move(lnglat); }
 	QPair<float, float> getLnglat() const noexcept { return lnglat_; }
+
+	void setBuildTime(const QDateTime& buildTime) noexcept { buildTime_ = buildTime; }
+	void setBuildTime(QDateTime&& buildTime) noexcept { buildTime_ = std::move(buildTime); }
+	QDateTime getBuildTime() const noexcept { return buildTime_; }
 
 private:
 	QString HASC_;	// 行政区划代码
@@ -102,7 +118,7 @@ private:
 
 	Type type_;
 	RouteLevel routeLevel_;
-	FunctionType functionType_;
+	FunctionType funcType_;
 
 	QPair<float, float> lnglat_;
 
