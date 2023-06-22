@@ -17,30 +17,44 @@ public:
 		PaperBased = 0,
 		Electronic,
 	};
-	//set函数
-	void setDesignDrawings(BRDType designDrawings) { designDrawings_ = designDrawings; }
-	void setDesignDoc(BRDType designDoc) { designDoc_ = designDoc; }
-	void setRecordDrawings(BRDType recordDrawings) { recordDrawings_ = recordDrawings; }
-	void setAcceptanceDoc(BRDType acceptanceDoc) { acceptanceDoc_ = acceptanceDoc; }
-	void setADDoc(BRDType ADDoc) { ADDoc_ = ADDoc; }
-	void setPMS(BRDType PMS) { PMS_ = PMS; }
-	void setSIS(BRDType SIS) { SIS_ = SIS; }
-	void setRRR(BRDType RRR) { RRR_ = RRR; }
-	void setOtherArchive(QString otherArchive) { otherArchive_ = otherArchive; }
-	void setArchiveType(ArchiveType archiveType) { archiveType_ = archiveType; }
-	void setFilingDate(QDateTime filingDate) { filingDate_ = filingDate; }
-	//get函数
-	BRDType getDesignDrawings() const { return designDrawings_; }
-	BRDType getDesignDoc() const { return designDoc_; }
-	BRDType getRecordDrawings() const { return recordDrawings_; }
-	BRDType getAcceptanceDoc() const { return acceptanceDoc_; }
-	BRDType getADDoc() const { return ADDoc_; }
-	BRDType getPMS() const { return PMS_; }
-	BRDType getSIS() const { return SIS_; }
-	BRDType getRRR() const { return RRR_; }
-	QString getOtherArchive() const { return otherArchive_; }
-	ArchiveType getArchiveType() const { return archiveType_; }
-	QDateTime getFilingDate() const { return filingDate_; }
+
+	// TODO: add constructor
+
+	void setDesignDrawings(BRDType designDrawings) noexcept { designDrawings_ = designDrawings; }
+	BRDType getDesignDrawings() const noexcept { return designDrawings_; }
+
+	void setDesignDoc(BRDType designDoc) noexcept { designDoc_ = designDoc; }
+	BRDType getDesignDoc() const noexcept { return designDoc_; }
+
+	void setRecordDrawings(BRDType recordDrawings) noexcept { recordDrawings_ = recordDrawings; }
+	BRDType getRecordDrawings() const noexcept { return recordDrawings_; }
+
+	void setAcceptanceDoc(BRDType acceptanceDoc) noexcept { acceptanceDoc_ = acceptanceDoc; }
+	BRDType getAcceptanceDoc() const noexcept { return acceptanceDoc_; }
+
+	void setADDoc(BRDType ADDoc) noexcept { ADDoc_ = ADDoc; }
+	BRDType getADDoc() const noexcept { return ADDoc_; }
+
+	void setPMS(BRDType PMS) noexcept { PMS_ = PMS; }
+	BRDType getPMS() const noexcept { return PMS_; }
+
+	void setSIS(BRDType SIS) noexcept { SIS_ = SIS; }
+	BRDType getSIS() const noexcept { return SIS_; }
+
+	void setRRR(BRDType RRR) noexcept { RRR_ = RRR; }
+	BRDType getRRR() const noexcept { return RRR_; }
+
+	void setOtherArchive(const QString& otherArchive) noexcept { otherArchive_ = otherArchive; }
+	void setOtherArchive(QString&& otherArchive) noexcept { otherArchive_ = std::move(otherArchive); }
+	QString getOtherArchive() const noexcept { return otherArchive_; }
+
+	void setArchiveType(ArchiveType archiveType) noexcept { archiveType_ = archiveType; }
+	ArchiveType getArchiveType() const noexcept { return archiveType_; }
+
+	void setFilingDate(const QDateTime& filingDate) noexcept { filingDate_ = filingDate; }
+	void setFilingDate(QDateTime&& filingDate) noexcept { filingDate_ = std::move(filingDate); }
+	QDateTime getFilingDate() const noexcept { return filingDate_; }
+
 
 private:
 	BRDType designDrawings_;	// 设计图纸

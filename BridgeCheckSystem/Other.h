@@ -7,17 +7,24 @@
 // others
 class Other {
 public:
-	//set函数
-	void setBridgeEngineer(QString bridgeEngineer_) { bridgeEngineer = bridgeEngineer_; }
-	void setCardFiller(QString cardFiller_) { cardFiller = cardFiller_; }
-	void setCardTime(QDateTime cardTime_) { cardTime = cardTime_; }
-	//get函数
-	QString getBridgeEngineer() const { return bridgeEngineer; }
-	QString getCardFiller() const { return cardFiller; }
-	QDateTime getCardTime() const { return cardTime; }
+
+	// TODO: add constructor
+
+	void setBridgeEngineer(const QString& bridgeEngineer) { bridgeEngineer_ = bridgeEngineer; }
+	void setBridgeEngineer(QString&& bridgeEngineer) { bridgeEngineer_ = std::move(bridgeEngineer); }
+	QString getBridgeEngineer() const { return bridgeEngineer_; }
+
+	void setCardFiller(const QString& cardFiller) { cardFiller_ = cardFiller; }
+	void setCardFiller(QString&& cardFiller) { cardFiller_ = std::move(cardFiller); }
+	QString getCardFiller() const { return cardFiller_; }
+
+	void setCardTime(const QDateTime& cardTime) { cardTime_ = cardTime; }
+	void setCardTime(QDateTime&& cardTime) { cardTime_ = std::move(cardTime); }
+	QDateTime getCardTime() const { return cardTime_; }
+
 private:
-	QString bridgeEngineer;
-	QString cardFiller;			// 填卡人
-	QDateTime cardTime;			// 填卡时间
+	QString bridgeEngineer_;
+	QString cardFiller_;			// 填卡人
+	QDateTime cardTime_;			// 填卡时间
 };
 

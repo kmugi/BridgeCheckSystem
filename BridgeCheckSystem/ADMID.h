@@ -107,6 +107,32 @@ public:
 	void setBuildTime(QDateTime&& buildTime) noexcept { buildTime_ = std::move(buildTime); }
 	QDateTime getBuildTime() const noexcept { return buildTime_; }
 
+	void setDesignLoad(float designLoad) noexcept { designLoad_ = designLoad; }
+	float getDesignLoad() const noexcept { return designLoad_; }
+
+	void setGrade(float grade) noexcept { grade_ = grade; }
+	float getGrade() const noexcept { return grade_; }
+
+	void setDesignUnit(const QString& designUnit) noexcept { designUnit_ = designUnit; }
+	void setDesignUnit(QString&& designUnit) noexcept { designUnit_ = std::move(designUnit); }
+	QString getDesignUnit() const noexcept { return designUnit_; }
+
+	void setConstructorUnit(const QString& constructorUnit) noexcept { constructorUnit_ = constructorUnit; }
+	void setConstructorUnit(QString&& constructorUnit) noexcept { constructorUnit_ = std::move(constructorUnit); }
+	QString getConstructorUnit() const noexcept { return constructorUnit_; }
+
+	void setSupervisoryUnit(const QString& supervisoryUnit) noexcept { supervisoryUnit_ = supervisoryUnit; }
+	void setSupervisoryUnit(QString&& supervisoryUnit) noexcept { supervisoryUnit_ = std::move(supervisoryUnit); }
+	QString getSupervisoryUnit() const noexcept { return supervisoryUnit_; }
+
+	void setOwnerUnit(const QString& ownerUnit) noexcept { ownerUnit_ = ownerUnit; }
+	void setOwnerUnit(QString&& ownerUnit) noexcept { ownerUnit_ = std::move(ownerUnit); }
+	QString getOwnerUnit() const noexcept { return ownerUnit_; }
+
+	void setManagementUnit(const QString& managementUnit) noexcept { managementUnit_ = managementUnit; }
+	void setManagementUnit(QString&& managementUnit) noexcept { managementUnit_ = std::move(managementUnit); }
+	QString getManagementUnit() const noexcept { return managementUnit_; }
+
 private:
 	QString HASC_;	// 行政区划代码
 
@@ -124,8 +150,8 @@ private:
 
 	QDateTime buildTime_;
 
-	float designLoad;	// 设计承载重量
-	float grade;		// 坡度
+	float designLoad_;	// 设计承载重量
+	float grade_;		// 坡度
 
 	// 单位
 	QString designUnit_;		// 设计

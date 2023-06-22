@@ -13,22 +13,34 @@ public:
 		Strengthen,		// 加固
 		Renovation,		// 改造
 	};
-	//set函数
-	void setTime(QDateTime time) { time_ = time; }
-	void setType(RemedialActionType type) { type_ = type; }
-	void setRemedialActionReason(QString remedialActionReason) { remedialActionReason_ = remedialActionReason; }
-	void setRemedialActionScope(QString remedialActionScope) { remedialActionScope_ = remedialActionScope; }
-	void setProjectCost(uint32_t projectCost) { projectCost_ = projectCost; }
-	void setFundingSource(QString fundingSource) { fundingSource_ = fundingSource; }
-	void setRAQA(QString RAQA) { RAQA_ = RAQA; }
-	//get函数
-	QDateTime getTime() const { return time_; }
-	RemedialActionType getType() const { return type_; }
-	QString getRemedialActionReason() const { return remedialActionReason_; }
-	QString getRemedialActionScope() const { return remedialActionScope_; }
-	uint32_t getProjectCost() const { return projectCost_; }
-	QString getFundingSource() const { return fundingSource_; }
-	QString getRAQA() const { return RAQA_; }
+
+	// TODO: add constructor
+
+	void setTime(const QDateTime& time) noexcept { time_ = time; }
+	void setTime(QDateTime&& time) noexcept { time_ = std::move(time); }
+	QDateTime getTime() const noexcept { return time_; }
+
+	void setType(RemedialActionType type) noexcept { type_ = type; }
+	RemedialActionType getType() const noexcept { return type_; }
+
+	void setRemedialActionReason(const QString& remedialActionReason) noexcept { remedialActionReason_ = remedialActionReason; }
+	void setRemedialActionReason(QString&& remedialActionReason) noexcept { remedialActionReason_ = std::move(remedialActionReason); }
+	QString getRemedialActionReason() const noexcept { return remedialActionReason_; }
+
+	void setRemedialActionScope(const QString& remedialActionScope) noexcept { remedialActionScope_ = remedialActionScope; }
+	void setRemedialActionScope(QString&& remedialActionScope) noexcept { remedialActionScope_ = std::move(remedialActionScope); }
+	QString getRemedialActionScope() const noexcept { return remedialActionScope_; }
+
+	void setProjectCost(uint32_t projectCost) noexcept { projectCost_ = projectCost; }
+	uint32_t getProjectCost() const noexcept { return projectCost_; }
+
+	void setFundingSource(const QString& fundingSource) noexcept { fundingSource_ = fundingSource; }
+	void setFundingSource(QString&& fundingSource) noexcept { fundingSource_ = std::move(fundingSource); }
+	QString getFundingSource() const noexcept { return fundingSource_; }
+
+	void setRAQA(const QString& RAQA) noexcept { RAQA_ = RAQA; }
+	void setRAQA(QString&& RAQA) noexcept { RAQA_ = std::move(RAQA); }
+	QString getRAQA() const noexcept { return RAQA_; }
 
 
 private:
