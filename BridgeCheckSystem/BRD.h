@@ -17,6 +17,30 @@ public:
 		PaperBased = 0,
 		Electronic,
 	};
+	//set函数
+	void setDesignDrawings(BRDType designDrawings) { designDrawings_ = designDrawings; }
+	void setDesignDoc(BRDType designDoc) { designDoc_ = designDoc; }
+	void setRecordDrawings(BRDType recordDrawings) { recordDrawings_ = recordDrawings; }
+	void setAcceptanceDoc(BRDType acceptanceDoc) { acceptanceDoc_ = acceptanceDoc; }
+	void setADDoc(BRDType ADDoc) { ADDoc_ = ADDoc; }
+	void setPMS(BRDType PMS) { PMS_ = PMS; }
+	void setSIS(BRDType SIS) { SIS_ = SIS; }
+	void setRRR(BRDType RRR) { RRR_ = RRR; }
+	void setOtherArchive(QString otherArchive) { otherArchive_ = otherArchive; }
+	void setArchiveType(ArchiveType archiveType) { archiveType_ = archiveType; }
+	void setFilingDate(QDateTime filingDate) { filingDate_ = filingDate; }
+	//get函数
+	BRDType getDesignDrawings() const { return designDrawings_; }
+	BRDType getDesignDoc() const { return designDoc_; }
+	BRDType getRecordDrawings() const { return recordDrawings_; }
+	BRDType getAcceptanceDoc() const { return acceptanceDoc_; }
+	BRDType getADDoc() const { return ADDoc_; }
+	BRDType getPMS() const { return PMS_; }
+	BRDType getSIS() const { return SIS_; }
+	BRDType getRRR() const { return RRR_; }
+	QString getOtherArchive() const { return otherArchive_; }
+	ArchiveType getArchiveType() const { return archiveType_; }
+	QDateTime getFilingDate() const { return filingDate_; }
 
 private:
 	BRDType designDrawings_;	// 设计图纸
@@ -29,6 +53,6 @@ private:
 	BRDType RRR_;				// 历次维修，加固资料(Record of Repair and ReinforcementRecord of Repair and Reinforcement)
 	QString otherArchive_;		// 其他档案
 	ArchiveType archiveType_;	// 档案形式
-	QDateTime filingDate;		// 建档时间
+	QDateTime filingDate_;		// 建档时间
 };
 
