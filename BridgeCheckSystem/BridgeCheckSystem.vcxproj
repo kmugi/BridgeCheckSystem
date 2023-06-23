@@ -71,7 +71,7 @@
       <Optimization>Disabled</Optimization>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -88,9 +88,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AccountDao.cpp" />
+    <ClCompile Include="BridgeProfileWidget.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="MDR.cpp" />
     <ClCompile Include="Other.cpp" />
     <QtRcc Include="Login.qrc" />
+    <QtUic Include="BridgeProfileWidget.ui" />
     <QtUic Include="Login.ui" />
     <QtMoc Include="Login.h" />
     <ClCompile Include="ADMID.cpp" />
@@ -98,13 +102,23 @@
     <ClCompile Include="BRD.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="main.cpp" />
+    <QtUic Include="MainWindow.ui" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AccountDao.h" />
     <ClInclude Include="ADMID.h" />
     <ClInclude Include="BMAH.h" />
     <ClInclude Include="BRD.h" />
+    <QtMoc Include="BridgeProfileWidget.h" />
+    <ClInclude Include="DatabaseManager.hpp" />
+    <ClInclude Include="Logger.hpp" />
+    <ClInclude Include="wke.h" />
+    <QtMoc Include="MainWindow.h" />
     <ClInclude Include="MDR.h" />
     <ClInclude Include="Other.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
