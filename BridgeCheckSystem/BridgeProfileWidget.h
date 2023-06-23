@@ -6,10 +6,15 @@
 #include <optional>
 
 #include "ADMID.h"
+#include "ADMIDWidget.h"
+#include "Logger.hpp"
 
 class BridgeProfileWidget : public QWidget
 {
 	Q_OBJECT
+
+signals:
+	void send_type(ADMID::Type type);
 
 public:
 	BridgeProfileWidget(QWidget* parent = nullptr);
