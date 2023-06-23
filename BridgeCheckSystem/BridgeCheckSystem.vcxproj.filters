@@ -64,6 +64,9 @@
     <ClCompile Include="BridgeProfileWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ADMIDWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ADMID.h">
@@ -104,12 +107,18 @@
     <QtMoc Include="BridgeProfileWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="ADMIDWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="MainWindow.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="BridgeProfileWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ADMIDWidget.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
