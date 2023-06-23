@@ -3,14 +3,27 @@
 #include <QtWidgets/QWidget>
 #include "ui_Login.h"
 
+#include <QSqlDatabase>
+#include <QDebug>
+#include <QMessageBox>
+
+#include "DatabaseManager.hpp"
+#include "AccountDao.h"
+#include "MainWindow.h"
+
 class Login : public QWidget
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    Login(QWidget *parent = nullptr);
-    ~Login();
+	Login(QWidget* parent = nullptr);
+	~Login();
+
+	void clearEdit();
 
 private:
-    Ui::LoginClass ui;
+	QSqlDatabase database;
+
+private:
+	Ui::LoginClass ui;
 };
