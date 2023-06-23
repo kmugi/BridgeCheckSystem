@@ -12,6 +12,7 @@ class MainWindow : public QWidget
 	Q_OBJECT
 
 signals:
+	void send_bridgeType(const QString& typeStr);
 	// TODO: 编写传输桥梁数据的信号函数
 
 public:

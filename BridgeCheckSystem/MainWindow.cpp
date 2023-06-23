@@ -29,6 +29,9 @@ void MainWindow::on_newProfileBtn_clicked() {
 	bpWidget->setWindowModality(Qt::ApplicationModal);	// 模态窗口，阻塞一切窗口
 	auto title = QString("新建资料卡 类型: %1").arg(ui.bridgeTypes->currentText());
 	bpWidget->setWindowTitle(title);
+	// send bridge type to bpWidget
+	connect(this, &MainWindow::send_bridgeType, bpWidget, &BridgeProfileWidget::receive_bridgeType);
+	emit send_bridgeType(ui.bridgeTypes->currentText());
 	bpWidget->show();
 }
 
