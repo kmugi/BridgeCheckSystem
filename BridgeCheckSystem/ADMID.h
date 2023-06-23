@@ -2,6 +2,7 @@
 
 #include <QString>
 #include <QDateTime>
+#include <QMap>
 
 #define GAS(type, funcname, valname) \
 void set##funcname(type valname) noexcept { valname##_ = valname; } \
@@ -20,15 +21,16 @@ public:
 		Beam = 0,			 // 梁式桥
 		BoardArch,			 // 板拱桥
 		DoubleCurvedArch,    // 双曲拱桥
+		SteelCantileverArch, // 钢架、衍架拱桥
 		RigidConcreteArch,	 // 钢-混凝土组合拱桥
 		CableStayed,		 // 斜拉桥
 		Suspension,			 // 悬索桥
 	};
 
 	enum class RouteLevel {
-		National,	// 国道
-		Provincial, // 省道
-		County,		// 县道
+		National,		// 国道
+		Provincial,		// 省道
+		County,			// 县道
 	};
 
 	enum class FunctionType {
@@ -46,7 +48,11 @@ public:
 		const QString& routeNumber,
 		Type type,
 		RouteLevel routeLevel,
+		FunctionType funcType,
 		const QPair<float, float>& lnglat,
+		const QDateTime& buildTime,
+		float designLoad,
+		float grade,
 		const QString& designUnit,
 		const QString& constructorUnit,
 		const QString& supervisoryUnit,
@@ -62,7 +68,11 @@ public:
 		QString&& routeNumber,
 		Type type,
 		RouteLevel routeLevel,
+		FunctionType funcType,
 		QPair<float, float>&& lnglat,
+		QDateTime&& buildTime,
+		float designLoad,
+		float grade,
 		QString&& designUnit,
 		QString&& constructorUnit,
 		QString&& supervisoryUnit,
@@ -132,6 +142,28 @@ public:
 	void setManagementUnit(const QString& managementUnit) noexcept { managementUnit_ = managementUnit; }
 	void setManagementUnit(QString&& managementUnit) noexcept { managementUnit_ = std::move(managementUnit); }
 	QString getManagementUnit() const noexcept { return managementUnit_; }
+
+public:
+	// inline after c++17
+	inline const static QMap<ADMID::Type, QString> typeToStr{
+		{ADMID::Type::Beam, "梁式桥"},
+		{ADMID::Type::BoardArch, "板、助、箱型拱桥"},
+		{ADMID::Type::DoubleCurvedArch, "双曲拱桥"},
+		{ADMID::Type::SteelCantileverArch, "钢架、衍架拱桥"},
+		{ADMID::Type::RigidConcreteArch, "钢-混凝土组合拱桥"},
+		{ADMID::Type::CableStayed, "斜拉桥"},
+		{ADMID::Type::Suspension, "悬索桥"}
+	};
+
+	inline const static QMap<QString, ADMID::Type> strToType{
+		{"梁式桥", ADMID::Type::Beam},
+		{"板、助、箱型拱桥", ADMID::Type::BoardArch},
+		{"双曲拱桥", ADMID::Type::DoubleCurvedArch},
+		{"钢架、衍架拱桥", ADMID::Type::SteelCantileverArch},
+		{"钢-混凝土组合拱桥", ADMID::Type::RigidConcreteArch},
+		{"斜拉桥", ADMID::Type::CableStayed},
+		{"悬索桥", ADMID::Type::Suspension}
+	};
 
 private:
 	QString HASC_;	// 行政区划代码
