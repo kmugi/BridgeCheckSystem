@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindowClass</class>
+ <widget class="QWidget" name="MainWindowClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1400</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1400</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1400</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>等线</family>
+    <pointsize>18</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QComboBox {
+	border-radius: 6px;
+}</string>
+  </property>
+  <widget class="QWidget" name="mapWidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>0</y>
+     <width>1100</width>
+     <height>800</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bridgeTypes">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>30</y>
+     <width>241</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>等线</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>梁式桥</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>板、助、箱型拱桥</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>双曲拱桥</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>钢架、衍架拱桥</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>钢-混凝土组合拱桥</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>斜拉桥</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>悬索桥</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="newProfileBtn">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>等线</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>新建桥梁资料卡</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="bridgeNames">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>180</y>
+     <width>241</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>等线</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="showProfileBtn">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>240</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>等线</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>新建桥梁资料卡</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
