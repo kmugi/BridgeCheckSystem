@@ -165,6 +165,28 @@ public:
 		{"悬索桥", ADMID::Type::Suspension}
 	};
 
+	inline const static QMap<ADMID::RouteLevel, QString> routeLevelToStr{
+		{ADMID::RouteLevel::County, "县道"},
+		{ADMID::RouteLevel::Provincial, "省道"},
+		{ADMID::RouteLevel::National, "国道"}
+	};
+
+	inline const static QMap<QString, ADMID::RouteLevel> strToRouteLevel{
+		{"县道", ADMID::RouteLevel::County},
+		{"省道", ADMID::RouteLevel::Provincial},
+		{"国道", ADMID::RouteLevel::National}
+	};
+
+	inline const static QMap<ADMID::FunctionType, QString> functionTypeToStr{
+		{ADMID::FunctionType::Road, "公路"},
+		{ADMID::FunctionType::RailWay, "铁路"}
+	};
+
+	inline const static QMap<QString, ADMID::FunctionType> strToFunctionType{
+		{"公路", ADMID::FunctionType::Road},
+		{"铁路", ADMID::FunctionType::RailWay}
+	};
+
 private:
 	QString HASC_;	// 行政区划代码
 
