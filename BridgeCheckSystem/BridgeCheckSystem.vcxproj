@@ -89,6 +89,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AccountDao.cpp" />
+    <ClCompile Include="ADMIDDao.cpp" />
     <ClCompile Include="ADMIDWidget.cpp" />
     <ClCompile Include="BridgeProfileWidget.cpp" />
     <ClCompile Include="MainWindow.cpp" />
@@ -110,6 +111,7 @@
     <ClInclude Include="AccountDao.h" />
     <ClInclude Include="ADMID.h" />
     <QtMoc Include="ADMIDWidget.h" />
+    <ClInclude Include="ADMIDDao.h" />
     <ClInclude Include="BMAH.h" />
     <ClInclude Include="BRD.h" />
     <QtMoc Include="BridgeProfileWidget.h" />
