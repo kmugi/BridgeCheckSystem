@@ -238,7 +238,7 @@ std::optional<QString> ADMIDDao::queryManagementUnit(const QString& bridgeNumber
 }
 
 void ADMIDDao::updataBridgeName(const QString& bridgeNumber, const QString& bridgeName) {
-	auto sql = QString("UPDATA admid SET bridgeName = '%1', WHERE bridgeNumber = '%2';")
+	auto sql = QString("UPDATA admid SET bridgeName = '%1' WHERE bridgeNumber = '%2';")
 		.arg(bridgeName.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -249,8 +249,9 @@ void ADMIDDao::updataBridgeName(const QString& bridgeNumber, const QString& brid
 		CRITICAL(QString("Failed to updata '%1'").arg(bridgeName.trimmed()));
 	}
 }
+
 void ADMIDDao::updataRouteName(const QString& bridgeNumber, const QString& routeName) {
-	auto sql = QString("UPDATA admid SET routeName = '%1', WHERE bridgeNumber = '%2';")
+	auto sql = QString("UPDATA admid SET routeName = '%1' WHERE bridgeNumber = '%2';")
 		.arg(routeName.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -261,8 +262,104 @@ void ADMIDDao::updataRouteName(const QString& bridgeNumber, const QString& route
 		CRITICAL(QString("Failed to updata '%1'").arg(routeName.trimmed()));
 	}
 }
+
+void ADMIDDao::updataType(const QString& bridgeNumber, ADMID::Type type) {
+	auto sql = QString("UPDATA admid SET type = %1 WHERE bridgeNumber = '%2';")
+		.arg(static_cast<int>(type))
+		.arg(bridgeNumber.trimmed());
+
+	DEBUG(sql);
+
+	bool isSuccess = QSqlQuery(sql).exec();
+	if (!isSuccess) {
+		CRITICAL(QString("Failed to updata '%1'").arg(QString::number(static_cast<int>(type))));
+	}
+}
+
+void ADMIDDao::updataRouteLevel(const QString& bridgeNumber, ADMID::RouteLevel routeLevel) {
+	auto sql = QString("UPDATA admid SET routeLevel = %1 WHERE bridgeNumber = '%2';")
+		.arg(static_cast<int>(routeLevel))
+		.arg(bridgeNumber.trimmed());
+
+	DEBUG(sql);
+
+	bool isSuccess = QSqlQuery(sql).exec();
+	if (!isSuccess) {
+		CRITICAL(QString("Failed to updata '%1'").arg(QString::number(static_cast<int>(routeLevel))));
+	}
+}
+
+void ADMIDDao::updataFunctionType(const QString& bridgeNumber, ADMID::FunctionType functionType) {
+	auto sql = QString("UPDATA admid SET functionType = %1 WHERE bridgeNumber = '%2';")
+		.arg(static_cast<int>(functionType))
+		.arg(bridgeNumber.trimmed());
+
+	DEBUG(sql);
+
+	bool isSuccess = QSqlQuery(sql).exec();
+	if (!isSuccess) {
+		CRITICAL(QString("Failed to updata '%1'").arg(QString::number(static_cast<int>(functionType))));
+	}
+}
+
+void ADMIDDao::updataLnglat(const QString& bridgeNumber, const QPair<float, float>& lnglat) {
+	auto sql = QString("UPDATA admid SET lng = %1, lat = %2 WHERE bridgeNumber = '%3'")
+		.arg(QString::number(lnglat.first, 'f', 3))
+		.arg(QString::number(lnglat.second, 'f', 3))
+		.arg(bridgeNumber.trimmed());
+
+	DEBUG(sql);
+
+	bool isSuccess = QSqlQuery(sql).exec();
+	if (!isSuccess) {
+		CRITICAL(QString("Failed to updata '%1', '%2'")
+			.arg(QString::number(lnglat.first, 'f', 3))
+			.arg(QString::number(lnglat.second, 'f', 3))
+		);
+	}
+}
+
+void ADMIDDao::updataBuildTime(const QString& bridgeNumber, const QDateTime& buildTime) {
+	auto sql = QString("UPDATA admid SET buildTime = '%1' WHERE bridgeNumber = '%2';")
+		.arg(buildTime.toString("yyyy-MM-dd HH:mm:ss"))
+		.arg(bridgeNumber.trimmed());
+
+	DEBUG(sql);
+
+	bool isSuccess = QSqlQuery(sql).exec();
+	if (!isSuccess) {
+		CRITICAL(QString("Failed to updata '%1'").arg(buildTime.toString("yyyy-MM-dd HH:mm:ss")));
+	}
+}
+
+void ADMIDDao::updataDesignLoad(const QString& bridgeNumber, float designLoad) {
+	auto sql = QString("UPDATA admid SET designLoad = %1 WHERE bridgeNumber = '%2';")
+		.arg(QString::number(designLoad, 'f', 5))
+		.arg(bridgeNumber.trimmed());
+
+	DEBUG(sql);
+
+	bool isSuccess = QSqlQuery(sql).exec();
+	if (!isSuccess) {
+		CRITICAL(QString("Failed to updata '%1'").arg(QString::number(designLoad, 'f', 5)));
+	}
+}
+
+void ADMIDDao::updataGrade(const QString& bridgeNumber, float grade) {
+	auto sql = QString("UPDATA admid SET grade = %1 WHERE bridgeNumber = '%2';")
+		.arg(QString::number(grade, 'f', 5))
+		.arg(bridgeNumber.trimmed());
+
+	DEBUG(sql);
+
+	bool isSuccess = QSqlQuery(sql).exec();
+	if (!isSuccess) {
+		CRITICAL(QString("Failed to updata '%1'").arg(QString::number(grade, 'f', 5)));
+	}
+}
+
 void ADMIDDao::updataDesignUnit(const QString& bridgeNumber, const QString& designUnit) {
-	auto sql = QString("UPDATA admid SET designUnit = '%1', WHERE bridgeNumber = '%2';")
+	auto sql = QString("UPDATA admid SET designUnit = '%1' WHERE bridgeNumber = '%2';")
 		.arg(designUnit.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -272,10 +369,10 @@ void ADMIDDao::updataDesignUnit(const QString& bridgeNumber, const QString& desi
 	if (!isSuccess) {
 		CRITICAL(QString("Failed to updata '%1'").arg(designUnit.trimmed()));
 	}
-
 }
+
 void ADMIDDao::updataSupervisoryUnit(const QString& bridgeNumber, const QString& supervisoryUnit) {
-	auto sql = QString("UPDATA admid SET supervisoryUnit = '%1', WHERE bridgeNumber = '%2';")
+	auto sql = QString("UPDATA admid SET supervisoryUnit = '%1' WHERE bridgeNumber = '%2';")
 		.arg(supervisoryUnit.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -286,8 +383,9 @@ void ADMIDDao::updataSupervisoryUnit(const QString& bridgeNumber, const QString&
 		CRITICAL(QString("Failed to updata '%1'").arg(supervisoryUnit.trimmed()));
 	}
 }
-void ADMIDDao::updataConstructorUnit(const QString & bridgeNumber, const QString & constructorUnit) {
-	auto sql = QString("UPDATA admid SET constructorUnit = '%1', WHERE bridgeNumber = '%2';")
+
+void ADMIDDao::updataConstructorUnit(const QString& bridgeNumber, const QString& constructorUnit) {
+	auto sql = QString("UPDATA admid SET constructorUnit = '%1' WHERE bridgeNumber = '%2';")
 		.arg(constructorUnit.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -298,8 +396,9 @@ void ADMIDDao::updataConstructorUnit(const QString & bridgeNumber, const QString
 		CRITICAL(QString("Failed to updata '%1'").arg(constructorUnit.trimmed()));
 	}
 }
+
 void ADMIDDao::updataOwnerUnit(const QString& bridgeNumber, const QString& ownerUnit) {
-	auto sql = QString("UPDATA admid SET ownerUnit = '%1', WHERE bridgeNumber = '%2';")
+	auto sql = QString("UPDATA admid SET ownerUnit = '%1' WHERE bridgeNumber = '%2';")
 		.arg(ownerUnit.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -310,8 +409,9 @@ void ADMIDDao::updataOwnerUnit(const QString& bridgeNumber, const QString& owner
 		CRITICAL(QString("Failed to updata '%1'").arg(ownerUnit.trimmed()));
 	}
 }
+
 void ADMIDDao::updataManagementUnit(const QString& bridgeNumber, const QString& managementUnit) {
-	auto sql = QString("UPDATA admid SET managementUnit = '%1', WHERE bridgeNumber = '%2';")
+	auto sql = QString("UPDATA admid SET managementUnit = '%1' WHERE bridgeNumber = '%2';")
 		.arg(managementUnit.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -322,4 +422,4 @@ void ADMIDDao::updataManagementUnit(const QString& bridgeNumber, const QString& 
 		CRITICAL(QString("Failed to updata '%1'").arg(managementUnit.trimmed()));
 	}
 }
-	
+
