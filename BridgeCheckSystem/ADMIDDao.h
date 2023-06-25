@@ -10,6 +10,12 @@
 
 class ADMIDDao {
 public:
+	// insert
+	static void insertADMID(const ADMID& admid);
+
+	// delete
+	static void deleteADMID(const QString& bridgeNumber);
+
 	// query
 	static std::optional<QString> queryBridgeNumber(const QString& bridgeName);
 	static std::optional<QString> queryBridgeName(const QString& bridgeNumber);
@@ -27,5 +33,21 @@ public:
 	static std::optional<QString> querySupervisoryUnit(const QString& bridgeNumber);
 	static std::optional<QString> queryOwnerUnit(const QString& bridgeNumber);
 	static std::optional<QString> queryManagementUnit(const QString& bridgeNumber);
+
+	// updata
+	static void updataBridgeName(const QString& bridgeNumber, const QString& bridgeName);
+	static void updataRouteName(const QString& bridgeNumber, const QString& routeName);
+	static void updataType(const QString& bridgeNumber, ADMID::Type type);
+	static void updataRouteLevel(const QString& bridgeNumber, ADMID::RouteLevel routeLevel);
+	static void updataFunctionType(const QString& bridgeNumber, ADMID::FunctionType functionType);
+	static void updataLnglat(const QString& bridgeNumber, const QPair<float, float>& lnglat);
+	static void updataBuildTime(const QString& bridgeNumber, const QDateTime& buildTime);
+	static void updataDesignLoad(const QString& bridgeNumber, float designLoad);
+	static void updataGrade(const QString& bridgeNumber, float grade);
+	static void updataDesignUnit(const QString& bridgeNumber, const QString& designUnit);
+	static void updataConstructorUnit(const QString& bridgeNumber, const QString& constructorUnit);
+	static void updataSupervisoryUnit(const QString& bridgeNumber, const QString& supervisoryUnit);
+	static void updataOwnerUnit(const QString& bridgeNumber, const QString& ownerUnit);
+	static void updataManagementUnit(const QString& bridgeNumber, const QString& managementUnit);
 };
 
