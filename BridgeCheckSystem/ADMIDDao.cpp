@@ -262,7 +262,7 @@ void ADMIDDao::updataRouteName(const QString& bridgeNumber, const QString& route
 	}
 }
 void ADMIDDao::updataDesignUnit(const QString& bridgeNumber, const QString& designUnit) {
-	auto sql = QString("UPDATA admid SET routeName = '%1', WHERE bridgeNumber = '%2';")
+	auto sql = QString("UPDATA admid SET designUnit = '%1', WHERE bridgeNumber = '%2';")
 		.arg(designUnit.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -275,7 +275,7 @@ void ADMIDDao::updataDesignUnit(const QString& bridgeNumber, const QString& desi
 
 }
 void ADMIDDao::updataSupervisoryUnit(const QString& bridgeNumber, const QString& supervisoryUnit) {
-	auto sql = QString("UPDATA admid SET routeName = '%1', WHERE bridgeNumber = '%2';")
+	auto sql = QString("UPDATA admid SET supervisoryUnit = '%1', WHERE bridgeNumber = '%2';")
 		.arg(supervisoryUnit.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -287,7 +287,7 @@ void ADMIDDao::updataSupervisoryUnit(const QString& bridgeNumber, const QString&
 	}
 }
 void ADMIDDao::updataConstructorUnit(const QString & bridgeNumber, const QString & constructorUnit) {
-	auto sql = QString("UPDATA admid SET routeName = '%1', WHERE bridgeNumber = '%2';")
+	auto sql = QString("UPDATA admid SET constructorUnit = '%1', WHERE bridgeNumber = '%2';")
 		.arg(constructorUnit.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -299,7 +299,7 @@ void ADMIDDao::updataConstructorUnit(const QString & bridgeNumber, const QString
 	}
 }
 void ADMIDDao::updataOwnerUnit(const QString& bridgeNumber, const QString& ownerUnit) {
-	auto sql = QString("UPDATA admid SET routeName = '%1', WHERE bridgeNumber = '%2';")
+	auto sql = QString("UPDATA admid SET ownerUnit = '%1', WHERE bridgeNumber = '%2';")
 		.arg(ownerUnit.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -311,7 +311,7 @@ void ADMIDDao::updataOwnerUnit(const QString& bridgeNumber, const QString& owner
 	}
 }
 void ADMIDDao::updataManagementUnit(const QString& bridgeNumber, const QString& managementUnit) {
-	auto sql = QString("UPDATA admid SET routeName = '%1', WHERE bridgeNumber = '%2';")
+	auto sql = QString("UPDATA admid SET managementUnit = '%1', WHERE bridgeNumber = '%2';")
 		.arg(managementUnit.trimmed())
 		.arg(bridgeNumber.trimmed());
 
