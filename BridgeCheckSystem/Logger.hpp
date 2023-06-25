@@ -13,7 +13,14 @@ public:
 	}
 
 	void Debug(const char* funcname, int line, const QString& info) const {
-		qDebug() << QString("funcname: %1; line: %2; info: %3")
+		qDebug() << QString("DEBUG, funcname: %1; line: %2; info: %3")
+			.arg(funcname)
+			.arg(line)
+			.arg(info);
+	}
+
+	void Critical(const char* funcname, int line, const QString& info) const {
+		qDebug() << QString("CRITICAL, funcname: %1; line: %2; info: %3")
 			.arg(funcname)
 			.arg(line)
 			.arg(info);
@@ -25,3 +32,7 @@ public:
 Logger::instance().Debug(__FUNCTION__, __LINE__, info)
 #endif
 
+#ifndef CRITICAL
+#define CRITICAL(info) \
+Logger::instance().Critical(__FUNCTION__, __LINE__, info)
+#endif
