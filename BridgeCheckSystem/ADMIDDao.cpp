@@ -237,8 +237,8 @@ std::optional<QString> ADMIDDao::queryManagementUnit(const QString& bridgeNumber
 	return std::nullopt;
 }
 
-void ADMIDDao::updataBridgeName(const QString& bridgeNumber, const QString& bridgeName) {
-	auto sql = QString("UPDATA admid SET bridgeName = '%1' WHERE bridgeNumber = '%2';")
+void ADMIDDao::updateBridgeName(const QString& bridgeNumber, const QString& bridgeName) {
+	auto sql = QString("UPDATE admid SET bridgeName = '%1' WHERE bridgeNumber = '%2';")
 		.arg(bridgeName.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -250,8 +250,8 @@ void ADMIDDao::updataBridgeName(const QString& bridgeNumber, const QString& brid
 	}
 }
 
-void ADMIDDao::updataRouteName(const QString& bridgeNumber, const QString& routeName) {
-	auto sql = QString("UPDATA admid SET routeName = '%1' WHERE bridgeNumber = '%2';")
+void ADMIDDao::updateRouteName(const QString& bridgeNumber, const QString& routeName) {
+	auto sql = QString("UPDATE admid SET routeName = '%1' WHERE bridgeNumber = '%2';")
 		.arg(routeName.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -263,8 +263,8 @@ void ADMIDDao::updataRouteName(const QString& bridgeNumber, const QString& route
 	}
 }
 
-void ADMIDDao::updataType(const QString& bridgeNumber, ADMID::Type type) {
-	auto sql = QString("UPDATA admid SET type = %1 WHERE bridgeNumber = '%2';")
+void ADMIDDao::updateType(const QString& bridgeNumber, ADMID::Type type) {
+	auto sql = QString("UPDATE admid SET type = %1 WHERE bridgeNumber = '%2';")
 		.arg(static_cast<int>(type))
 		.arg(bridgeNumber.trimmed());
 
@@ -276,8 +276,8 @@ void ADMIDDao::updataType(const QString& bridgeNumber, ADMID::Type type) {
 	}
 }
 
-void ADMIDDao::updataRouteLevel(const QString& bridgeNumber, ADMID::RouteLevel routeLevel) {
-	auto sql = QString("UPDATA admid SET routeLevel = %1 WHERE bridgeNumber = '%2';")
+void ADMIDDao::updateRouteLevel(const QString& bridgeNumber, ADMID::RouteLevel routeLevel) {
+	auto sql = QString("UPDATE admid SET routeLevel = %1 WHERE bridgeNumber = '%2';")
 		.arg(static_cast<int>(routeLevel))
 		.arg(bridgeNumber.trimmed());
 
@@ -289,8 +289,8 @@ void ADMIDDao::updataRouteLevel(const QString& bridgeNumber, ADMID::RouteLevel r
 	}
 }
 
-void ADMIDDao::updataFunctionType(const QString& bridgeNumber, ADMID::FunctionType functionType) {
-	auto sql = QString("UPDATA admid SET functionType = %1 WHERE bridgeNumber = '%2';")
+void ADMIDDao::updateFunctionType(const QString& bridgeNumber, ADMID::FunctionType functionType) {
+	auto sql = QString("UPDATE admid SET functionType = %1 WHERE bridgeNumber = '%2';")
 		.arg(static_cast<int>(functionType))
 		.arg(bridgeNumber.trimmed());
 
@@ -302,8 +302,8 @@ void ADMIDDao::updataFunctionType(const QString& bridgeNumber, ADMID::FunctionTy
 	}
 }
 
-void ADMIDDao::updataLnglat(const QString& bridgeNumber, const QPair<float, float>& lnglat) {
-	auto sql = QString("UPDATA admid SET lng = %1, lat = %2 WHERE bridgeNumber = '%3'")
+void ADMIDDao::updateLnglat(const QString& bridgeNumber, const QPair<float, float>& lnglat) {
+	auto sql = QString("UPDATE admid SET lng = %1, lat = %2 WHERE bridgeNumber = '%3'")
 		.arg(QString::number(lnglat.first, 'f', 3))
 		.arg(QString::number(lnglat.second, 'f', 3))
 		.arg(bridgeNumber.trimmed());
@@ -319,8 +319,8 @@ void ADMIDDao::updataLnglat(const QString& bridgeNumber, const QPair<float, floa
 	}
 }
 
-void ADMIDDao::updataBuildTime(const QString& bridgeNumber, const QDateTime& buildTime) {
-	auto sql = QString("UPDATA admid SET buildTime = '%1' WHERE bridgeNumber = '%2';")
+void ADMIDDao::updateBuildTime(const QString& bridgeNumber, const QDateTime& buildTime) {
+	auto sql = QString("UPDATE admid SET buildTime = '%1' WHERE bridgeNumber = '%2';")
 		.arg(buildTime.toString("yyyy-MM-dd HH:mm:ss"))
 		.arg(bridgeNumber.trimmed());
 
@@ -332,8 +332,8 @@ void ADMIDDao::updataBuildTime(const QString& bridgeNumber, const QDateTime& bui
 	}
 }
 
-void ADMIDDao::updataDesignLoad(const QString& bridgeNumber, float designLoad) {
-	auto sql = QString("UPDATA admid SET designLoad = %1 WHERE bridgeNumber = '%2';")
+void ADMIDDao::updateDesignLoad(const QString& bridgeNumber, float designLoad) {
+	auto sql = QString("UPDATE admid SET designLoad = %1 WHERE bridgeNumber = '%2';")
 		.arg(QString::number(designLoad, 'f', 5))
 		.arg(bridgeNumber.trimmed());
 
@@ -345,8 +345,8 @@ void ADMIDDao::updataDesignLoad(const QString& bridgeNumber, float designLoad) {
 	}
 }
 
-void ADMIDDao::updataGrade(const QString& bridgeNumber, float grade) {
-	auto sql = QString("UPDATA admid SET grade = %1 WHERE bridgeNumber = '%2';")
+void ADMIDDao::updateGrade(const QString& bridgeNumber, float grade) {
+	auto sql = QString("UPDATE admid SET grade = %1 WHERE bridgeNumber = '%2';")
 		.arg(QString::number(grade, 'f', 5))
 		.arg(bridgeNumber.trimmed());
 
@@ -358,8 +358,8 @@ void ADMIDDao::updataGrade(const QString& bridgeNumber, float grade) {
 	}
 }
 
-void ADMIDDao::updataDesignUnit(const QString& bridgeNumber, const QString& designUnit) {
-	auto sql = QString("UPDATA admid SET designUnit = '%1' WHERE bridgeNumber = '%2';")
+void ADMIDDao::updateDesignUnit(const QString& bridgeNumber, const QString& designUnit) {
+	auto sql = QString("UPDATE admid SET designUnit = '%1' WHERE bridgeNumber = '%2';")
 		.arg(designUnit.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -371,8 +371,8 @@ void ADMIDDao::updataDesignUnit(const QString& bridgeNumber, const QString& desi
 	}
 }
 
-void ADMIDDao::updataSupervisoryUnit(const QString& bridgeNumber, const QString& supervisoryUnit) {
-	auto sql = QString("UPDATA admid SET supervisoryUnit = '%1' WHERE bridgeNumber = '%2';")
+void ADMIDDao::updateSupervisoryUnit(const QString& bridgeNumber, const QString& supervisoryUnit) {
+	auto sql = QString("UPDATE admid SET supervisoryUnit = '%1' WHERE bridgeNumber = '%2';")
 		.arg(supervisoryUnit.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -384,8 +384,8 @@ void ADMIDDao::updataSupervisoryUnit(const QString& bridgeNumber, const QString&
 	}
 }
 
-void ADMIDDao::updataConstructorUnit(const QString& bridgeNumber, const QString& constructorUnit) {
-	auto sql = QString("UPDATA admid SET constructorUnit = '%1' WHERE bridgeNumber = '%2';")
+void ADMIDDao::updateConstructorUnit(const QString& bridgeNumber, const QString& constructorUnit) {
+	auto sql = QString("UPDATE admid SET constructorUnit = '%1' WHERE bridgeNumber = '%2';")
 		.arg(constructorUnit.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -397,8 +397,8 @@ void ADMIDDao::updataConstructorUnit(const QString& bridgeNumber, const QString&
 	}
 }
 
-void ADMIDDao::updataOwnerUnit(const QString& bridgeNumber, const QString& ownerUnit) {
-	auto sql = QString("UPDATA admid SET ownerUnit = '%1' WHERE bridgeNumber = '%2';")
+void ADMIDDao::updateOwnerUnit(const QString& bridgeNumber, const QString& ownerUnit) {
+	auto sql = QString("UPDATE admid SET ownerUnit = '%1' WHERE bridgeNumber = '%2';")
 		.arg(ownerUnit.trimmed())
 		.arg(bridgeNumber.trimmed());
 
@@ -410,8 +410,8 @@ void ADMIDDao::updataOwnerUnit(const QString& bridgeNumber, const QString& owner
 	}
 }
 
-void ADMIDDao::updataManagementUnit(const QString& bridgeNumber, const QString& managementUnit) {
-	auto sql = QString("UPDATA admid SET managementUnit = '%1' WHERE bridgeNumber = '%2';")
+void ADMIDDao::updateManagementUnit(const QString& bridgeNumber, const QString& managementUnit) {
+	auto sql = QString("UPDATE admid SET managementUnit = '%1' WHERE bridgeNumber = '%2';")
 		.arg(managementUnit.trimmed())
 		.arg(bridgeNumber.trimmed());
 

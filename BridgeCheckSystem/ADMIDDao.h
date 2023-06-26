@@ -35,19 +35,19 @@ public:
 	static std::optional<QString> queryManagementUnit(const QString& bridgeNumber);
 
 	// updata
-	static void updataBridgeName(const QString& bridgeNumber, const QString& bridgeName);
-	static void updataRouteName(const QString& bridgeNumber, const QString& routeName);
-	static void updataType(const QString& bridgeNumber, ADMID::Type type);
-	static void updataRouteLevel(const QString& bridgeNumber, ADMID::RouteLevel routeLevel);
-	static void updataFunctionType(const QString& bridgeNumber, ADMID::FunctionType functionType);
-	static void updataLnglat(const QString& bridgeNumber, const QPair<float, float>& lnglat);
-	static void updataBuildTime(const QString& bridgeNumber, const QDateTime& buildTime);
-	static void updataDesignLoad(const QString& bridgeNumber, float designLoad);
-	static void updataGrade(const QString& bridgeNumber, float grade);
-	static void updataDesignUnit(const QString& bridgeNumber, const QString& designUnit);
-	static void updataConstructorUnit(const QString& bridgeNumber, const QString& constructorUnit);
-	static void updataSupervisoryUnit(const QString& bridgeNumber, const QString& supervisoryUnit);
-	static void updataOwnerUnit(const QString& bridgeNumber, const QString& ownerUnit);
-	static void updataManagementUnit(const QString& bridgeNumber, const QString& managementUnit);
+	static void updateBridgeName(const QString& bridgeNumber, const QString& bridgeName);
+	static void updateRouteName(const QString& bridgeNumber, const QString& routeName);
+	static void updateType(const QString& bridgeNumber, ADMID::Type type);
+	static void updateRouteLevel(const QString& bridgeNumber, ADMID::RouteLevel routeLevel);
+	static void updateFunctionType(const QString& bridgeNumber, ADMID::FunctionType functionType);
+	static void updateLnglat(const QString& bridgeNumber, const QPair<float, float>& lnglat);
+	static void updateBuildTime(const QString& bridgeNumber, const QDateTime& buildTime);
+	static void updateDesignLoad(const QString& bridgeNumber, float designLoad);
+	static void updateGrade(const QString& bridgeNumber, float grade);
+	static void updateDesignUnit(const QString& bridgeNumber, const QString& designUnit);
+	static void updateConstructorUnit(const QString& bridgeNumber, const QString& constructorUnit);
+	static void updateSupervisoryUnit(const QString& bridgeNumber, const QString& supervisoryUnit);
+	static void updateOwnerUnit(const QString& bridgeNumber, const QString& ownerUnit);
+	static void updateManagementUnit(const QString& bridgeNumber, const QString& managementUnit);
 };
 
