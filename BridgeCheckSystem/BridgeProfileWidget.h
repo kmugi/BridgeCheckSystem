@@ -28,7 +28,12 @@ public:
 	void on_MDRBtn_clicked();
 	void on_OtherBtn_clicked();
 
+public:
+	// slots
+	// from mainWindow
 	void receive_bridgeType(const QString& typeStr);
+	// from ADMIDWidget
+	void receive_ADMIDInfo(const ADMID& info);
 
 private:
 	std::optional<ADMID::Type> type = std::nullopt;
