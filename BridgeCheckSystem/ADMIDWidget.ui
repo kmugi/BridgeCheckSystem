@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>850</width>
-    <height>720</height>
+    <height>740</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>850</width>
-    <height>720</height>
+    <height>740</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1100</width>
-    <height>720</height>
+    <height>740</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -32,13 +32,17 @@
 
 QComboBox {
 	border-radius: 5px;
+}
+
+QDateEdit {
+	border-radius: 5px;
 }</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>40</y>
+     <y>20</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -57,7 +61,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>40</y>
+     <y>20</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -76,7 +80,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>110</y>
+     <y>90</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -95,7 +99,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>110</y>
+     <y>90</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -114,7 +118,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>180</y>
+     <y>160</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -133,7 +137,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>180</y>
+     <y>160</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -152,7 +156,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>250</y>
+     <y>230</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -171,7 +175,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>250</y>
+     <y>230</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -190,7 +194,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>330</y>
+     <y>310</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -209,7 +213,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>330</y>
+     <y>310</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -228,7 +232,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>410</y>
+     <y>390</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -250,7 +254,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>410</y>
+     <y>390</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -269,7 +273,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>490</y>
+     <y>470</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -288,7 +292,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>570</y>
+     <y>550</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -307,7 +311,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>490</y>
+     <y>470</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -338,7 +342,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>570</y>
+     <y>550</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -369,7 +373,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>40</y>
+     <y>20</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -388,7 +392,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>40</y>
+     <y>20</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -403,14 +407,14 @@ QComboBox {
     <string/>
    </property>
    <property name="readOnly">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>110</y>
+     <y>90</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -429,7 +433,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>110</y>
+     <y>90</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -444,14 +448,14 @@ QComboBox {
     <string/>
    </property>
    <property name="readOnly">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>180</y>
+     <y>160</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -466,27 +470,11 @@ QComboBox {
     <string>建成时间</string>
    </property>
   </widget>
-  <widget class="QDateTimeEdit" name="buildTimeEdit">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>180</y>
-     <width>191</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>250</y>
+     <y>230</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -505,7 +493,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>250</y>
+     <y>230</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -520,14 +508,14 @@ QComboBox {
     <string/>
    </property>
    <property name="readOnly">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_13">
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>330</y>
+     <y>310</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -546,7 +534,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>330</y>
+     <y>310</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -561,14 +549,14 @@ QComboBox {
     <string/>
    </property>
    <property name="readOnly">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_14">
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>410</y>
+     <y>390</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -587,7 +575,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>410</y>
+     <y>390</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -602,14 +590,14 @@ QComboBox {
     <string/>
    </property>
    <property name="readOnly">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_15">
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>490</y>
+     <y>470</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -628,7 +616,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>490</y>
+     <y>470</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -643,14 +631,14 @@ QComboBox {
     <string/>
    </property>
    <property name="readOnly">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_16">
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>570</y>
+     <y>550</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -669,7 +657,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>570</y>
+     <y>550</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -684,14 +672,14 @@ QComboBox {
     <string/>
    </property>
    <property name="readOnly">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_17">
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>640</y>
+     <y>620</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -710,7 +698,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>640</y>
+     <y>620</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -725,14 +713,14 @@ QComboBox {
     <string/>
    </property>
    <property name="readOnly">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_18">
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>640</y>
+     <y>620</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -751,7 +739,7 @@ QComboBox {
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>640</y>
+     <y>620</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -766,7 +754,61 @@ QComboBox {
     <string/>
    </property>
    <property name="readOnly">
-    <bool>true</bool>
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="saveBtn">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>680</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>等线</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="exitBtn">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>680</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>等线</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="buildTime">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>160</y>
+     <width>191</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>等线</family>
+     <pointsize>16</pointsize>
+    </font>
    </property>
   </widget>
  </widget>
