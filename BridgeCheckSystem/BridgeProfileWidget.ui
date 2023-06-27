@@ -44,7 +44,7 @@
     <string>行政识别数据</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="BTSBtn">
+  <widget class="QPushButton" name="BTIBtn">
    <property name="geometry">
     <rect>
      <x>110</x>
