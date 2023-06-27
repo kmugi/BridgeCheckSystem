@@ -2,6 +2,7 @@
 
 #include <QString>
 #include <QDateTime>
+#include <QMap>
 
 // 桥梁档案资料
 // Bridge records and documentation
@@ -13,12 +14,41 @@ public:
 		Incomplete = -1,
 	};
 
+	// 档案形式
 	enum class ArchiveType {
 		PaperBased = 0,
 		Electronic,
 	};
 
-	// TODO: add constructor
+public:
+	BRD() = delete;
+	BRD(
+		BRDType designDrawings,
+		BRDType designDoc,
+		BRDType recordDrawings,
+		BRDType acceptanceDoc,
+		BRDType ADDoc,
+		BRDType PMS,
+		BRDType SIS,
+		BRDType RRR,
+		const QString& otherArchive,
+		ArchiveType archiveType,
+		const QDateTime& filingDate
+	) noexcept;
+
+	BRD(
+		BRDType designDrawings,
+		BRDType designDoc,
+		BRDType recordDrawings,
+		BRDType acceptanceDoc,
+		BRDType ADDoc,
+		BRDType PMS,
+		BRDType SIS,
+		BRDType RRR,
+		QString&& otherArchive,
+		ArchiveType archiveType,
+		QDateTime&& filingDate
+	) noexcept;
 
 	void setDesignDrawings(BRDType designDrawings) noexcept { designDrawings_ = designDrawings; }
 	BRDType getDesignDrawings() const noexcept { return designDrawings_; }
@@ -55,6 +85,28 @@ public:
 	void setFilingDate(QDateTime&& filingDate) noexcept { filingDate_ = std::move(filingDate); }
 	QDateTime getFilingDate() const noexcept { return filingDate_; }
 
+public:
+	inline const static QMap<BRD::BRDType, QString> BRDtypeToStr{
+		{BRD::BRDType::Incomplete, "不全"},
+		{BRD::BRDType::None, "无"},
+		{BRD::BRDType::Complete, "全"}
+	};
+
+	inline const static QMap<QString, BRD::BRDType> strToBRDType{
+		{"不全", BRD::BRDType::Incomplete},
+		{"无", BRD::BRDType::None},
+		{"全", BRD::BRDType::Complete}
+	};
+
+	inline const static QMap<ArchiveType, QString> archiveTypeToStr{
+		{BRD::ArchiveType::PaperBased, "纸质"},
+		{BRD::ArchiveType::Electronic, "电子"}
+	};
+
+	inline const static QMap<QString, ArchiveType> strToArchiveType{
+		{"纸质", BRD::ArchiveType::PaperBased},
+		{"电子", BRD::ArchiveType::Electronic}
+	};
 
 private:
 	BRDType designDrawings_;	// 设计图纸
