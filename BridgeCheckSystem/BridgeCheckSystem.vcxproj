@@ -92,6 +92,8 @@
     <ClCompile Include="ADMIDDao.cpp" />
     <ClCompile Include="ADMIDWidget.cpp" />
     <ClCompile Include="BridgeProfileWidget.cpp" />
+    <ClCompile Include="BSInfo.cpp" />
+    <ClCompile Include="BTI.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="MDR.cpp" />
     <ClCompile Include="Other.cpp" />
@@ -115,6 +117,8 @@
     <ClInclude Include="BMAH.h" />
     <ClInclude Include="BRD.h" />
     <QtMoc Include="BridgeProfileWidget.h" />
+    <ClInclude Include="BSInfo.h" />
+    <ClInclude Include="BTI.h" />
     <ClInclude Include="DatabaseManager.hpp" />
     <ClInclude Include="Logger.hpp" />
     <ClInclude Include="wke.h" />
