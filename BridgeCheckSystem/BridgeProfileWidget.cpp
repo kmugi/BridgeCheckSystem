@@ -34,5 +34,4 @@ void BridgeProfileWidget::receive_bridgeType(const QString& typeStr) {
 
 void BridgeProfileWidget::receive_ADMIDInfo(const ADMID& info) {
 	admid = std::make_optional<ADMID>(info);
-	qDebug() << info.getBuildTime();
 }
