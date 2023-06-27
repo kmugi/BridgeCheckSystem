@@ -14,7 +14,27 @@ public:
 		Renovation,		// 改造
 	};
 
-	// TODO: add constructor
+public:
+	MDR() = delete;
+	MDR(
+		const QDateTime& time,
+		RemedialActionType type,
+		const QString& remedialActionReason,
+		const QString& remedialActionScope,
+		uint32_t projectCost,
+		const QString& fundingSource,
+		const QString& RAQA
+	) noexcept;
+
+	MDR(
+		QDateTime&& time,
+		RemedialActionType type,
+		QString&& remedialActionReason,
+		QString&& remedialActionScope,
+		uint32_t projectCost,
+		QString&& fundingSource,
+		QString&& RAQA
+	) noexcept;
 
 	void setTime(const QDateTime& time) noexcept { time_ = time; }
 	void setTime(QDateTime&& time) noexcept { time_ = std::move(time); }
@@ -42,6 +62,18 @@ public:
 	void setRAQA(QString&& RAQA) noexcept { RAQA_ = std::move(RAQA); }
 	QString getRAQA() const noexcept { return RAQA_; }
 
+public:
+	inline const static QMap<MDR::RemedialActionType, QString> remedialActionTypeToStr{
+		{MDR::RemedialActionType::Repair, "修理"},
+		{MDR::RemedialActionType::Strengthen, "加固"},
+		{MDR::RemedialActionType::Renovation, "改造"}
+	};
+
+	inline const static QMap<QString, MDR::RemedialActionType> strToRemedialActionType{
+		{"修理", MDR::RemedialActionType::Repair},
+		{"加固", MDR::RemedialActionType::Strengthen},
+		{"改造", MDR::RemedialActionType::Renovation}
+	};
 
 private:
 	QDateTime time_;
