@@ -7,8 +7,18 @@
 // others
 class Other {
 public:
+	Other() = delete;
+	Other(
+		const QString& bridgeEngineer,
+		const QString& cardFiller,
+		const QDateTime& cardTime
+	) noexcept;
 
-	// TODO: add constructor
+	Other(
+		QString&& bridgeEngineer,
+		QString&& cardFiller,
+		QDateTime&& cardTime
+	) noexcept;
 
 	void setBridgeEngineer(const QString& bridgeEngineer) { bridgeEngineer_ = bridgeEngineer; }
 	void setBridgeEngineer(QString&& bridgeEngineer) { bridgeEngineer_ = std::move(bridgeEngineer); }
