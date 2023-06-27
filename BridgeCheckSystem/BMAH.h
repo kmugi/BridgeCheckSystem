@@ -2,6 +2,7 @@
 
 #include <QString>
 #include <QDateTime>
+#include <QMap>
 
 // 桥梁检测评定历史
 // Bridge Monitoring and Assessment History
@@ -14,7 +15,22 @@ public:
 		Special,
 	};
 
-	// TODO: add constructor
+	BMAH() = delete;
+	BMAH(
+		const QDateTime assessmentTime,
+		InspectionType type,
+		const QString result,
+		const QString remedialMeasures,
+		const QDateTime nextInspectionTime
+	) noexcept;
+
+	BMAH(
+		QDateTime&& assessmentTime,
+		InspectionType type,
+		QString&& result,
+		QString&& remedialMeasures,
+		QDateTime&& nextInspectionTime
+	) noexcept;
 
 	void setAssessmentTime(const QDateTime& assessmentTime) noexcept { assessmentTime_ = assessmentTime; };
 	void setAssessmentTime(QDateTime&& assessmentTime) noexcept { assessmentTime_ = std::move(assessmentTime); };
@@ -34,6 +50,19 @@ public:
 	void setNextlnspectionTime(const QDateTime& nextinspectionTime) noexcept { nextInspectionTime_ = nextinspectionTime; }
 	void setNextlnspectionTime(QDateTime&& nextinspectionTime) noexcept { nextInspectionTime_ = std::move(nextinspectionTime); }
 	QDateTime getInspectionTime() const noexcept { return nextInspectionTime_; }
+
+public:
+	inline const static QMap<BMAH::InspectionType, QString> inspectionTypeToStr{
+		{BMAH::InspectionType::Initial, "初始"},
+		{BMAH::InspectionType::Regular, "定期"},
+		{BMAH::InspectionType::Special, "特殊"}
+	};
+
+	inline const static QMap<QString, BMAH::InspectionType> strToInspectionType{
+		{"初始", BMAH::InspectionType::Initial},
+		{"定期", BMAH::InspectionType::Regular},
+		{"特殊", BMAH::InspectionType::Special}
+	};
 
 private:
 	QDateTime assessmentTime_;		// 评定时间
