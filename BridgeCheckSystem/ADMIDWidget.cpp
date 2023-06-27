@@ -43,6 +43,8 @@ ADMIDWidget::ADMIDWidget(QWidget* parent)
 				ui.managementUnitEdit->text().trimmed()
 			));
 
+			clearEdits();
+
 			this->close();
 		}
 	);
@@ -117,4 +119,21 @@ bool ADMIDWidget::isEditsEmpty() const {
 	}
 
 	return true;
+}
+
+void ADMIDWidget::clearEdits() {
+	ui.HASCEdit->clear();
+	ui.bridgeNameEdit->clear();
+	ui.bridgeNumberEdit->clear();
+	ui.routeNameEdit->clear();
+	ui.routeNumberEdit->clear();
+	ui.lngEdit->clear();
+	ui.latEdit->clear();
+	ui.designLoadEdit->clear();
+	ui.gradeEdit->clear();
+	ui.designUnitEdit->clear();
+	ui.constructorUnitEdit->clear();
+	ui.supervisoryUnitEdit->clear();
+	ui.managementUnitEdit->clear();
+	ui.ownerUnitEdit->clear();
 }
