@@ -21,7 +21,7 @@ public:
 	~BridgeProfileWidget();
 
 	void on_ADMIDBtn_clicked();
-	void on_BTSBtn_clicked();
+	void on_BTIBtn_clicked();
 	void on_BSInfoBtn_clicked();
 	void on_BRDBtn_clicked();
 	void on_BMAHBtn_clicked();
