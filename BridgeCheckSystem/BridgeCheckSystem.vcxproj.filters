@@ -70,6 +70,12 @@
     <ClCompile Include="ADMIDDao.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BTI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BSInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ADMID.h">
@@ -100,6 +106,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ADMIDDao.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BTI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BSInfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
