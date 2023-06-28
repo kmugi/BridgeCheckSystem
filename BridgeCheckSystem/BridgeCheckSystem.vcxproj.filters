@@ -76,6 +76,24 @@
     <ClCompile Include="BSInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BTIDao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BSInfoDao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BRDDao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BMAHDao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MDRDao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OtherDao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ADMID.h">
@@ -112,6 +130,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BSInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BTIDao.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BSInfoDao.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BRDDao.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BMAHDao.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MDRDao.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OtherDao.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
