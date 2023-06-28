@@ -22,7 +22,6 @@ public:
 		float ARW
 	) noexcept;
 
-	// TODO: getter and setter
 	void setLength(float length) noexcept { length_ = length; }
 	float getLength() const noexcept { return length_; }
 
