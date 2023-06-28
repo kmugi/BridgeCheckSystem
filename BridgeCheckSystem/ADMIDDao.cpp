@@ -34,7 +34,7 @@ ownerUnit, managementUnit) VALUES ('%1', '%2', '%3', '%4', '%5', %6, %7, %8, %9,
 }
 
 void ADMIDDao::deleteADMID(const QString& bridgeNumber) {
-	auto sql = QString("DELETE * FROM admid WHERE bridgeNumber = '%1';").arg(bridgeNumber.trimmed());
+	auto sql = QString("DELETE FROM admid WHERE bridgeNumber = '%1';").arg(bridgeNumber.trimmed());
 
 	DEBUG(sql);
 
