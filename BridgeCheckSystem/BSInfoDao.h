@@ -2,10 +2,13 @@
 
 #include <QString>
 #include <optional>
+#include <QSqlQuery>
 
 #include "BSInfo.h"
+#include "Logger.hpp"
 
 class BSInfoDao {
+public:
 	// insert
 	static void insertBSInfo(const QString& bridgeNumber, const BSInfo& bsInfo);
 

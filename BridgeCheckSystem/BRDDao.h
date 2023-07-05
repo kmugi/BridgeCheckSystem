@@ -3,10 +3,13 @@
 #include <QString>
 #include <QDateTime>
 #include <optional>
+#include <QSqlQuery>
 
 #include "BRD.h"
+#include "Logger.hpp"
 
 class BRDDao {
+public:
 	// insert
 	static void insertBRD(const QString& bridgeNumber, const BRD& brd);
 

@@ -3,10 +3,13 @@
 #include <QString>
 #include <QDateTime>
 #include <optional>
+#include <QSqlQuery>
 
 #include "MDR.h"
+#include "Logger.hpp"
 
 class MDRDao {
+public:
 	// insert
 	static void insertMDR(const QString& bridgeNumber, const MDR& mdr);
 

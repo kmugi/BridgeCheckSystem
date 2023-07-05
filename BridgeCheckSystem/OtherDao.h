@@ -3,10 +3,13 @@
 #include <QString>
 #include <QDateTime>
 #include <optional>
+#include <QSqlQuery>
 
 #include "Other.h"
+#include "Logger.hpp"
 
 class OtherDao {
+public:
 	// insert
 	static void insertOther(const QString& bridgeNumber, const Other& other);
 

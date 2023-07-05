@@ -3,10 +3,13 @@
 #include <QString>
 #include <QDateTime>
 #include <optional>
+#include <QSqlQuery>
 
 #include "BMAH.h"
+#include "Logger.hpp"
 
 class BMAHDao {
+public:
 	// insert
 	static void insertBMAH(const QString& bridgeNumber, const BMAH& bmah);
 

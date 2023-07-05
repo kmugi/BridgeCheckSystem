@@ -2,11 +2,13 @@
 
 #include <QString>
 #include <optional>
+#include <QSqlQuery>
 
 #include "BTI.h"
-#include <qstring.h>
+#include "Logger.hpp"
 
 class BTIDao {
+public:
 	// insert
 	static void insertBTI(const QString& bridgeNumber, const BTI& bti);
 

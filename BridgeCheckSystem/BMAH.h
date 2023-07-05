@@ -51,6 +51,10 @@ public:
 	void setNextlnspectionTime(QDateTime&& nextinspectionTime) noexcept { nextInspectionTime_ = std::move(nextinspectionTime); }
 	QDateTime getInspectionTime() const noexcept { return nextInspectionTime_; }
 
+	void setNextInspectionTime(const QDateTime& nextInspectionTime) noexcept { nextInspectionTime_ = nextInspectionTime; }
+	void setNextInspectionTime(QDateTime&& nextInspectionTime) noexcept { nextInspectionTime_ = std::move(nextInspectionTime); }
+	QDateTime getNextInspectionTime() const noexcept { return nextInspectionTime_; }
+
 public:
 	inline const static QMap<BMAH::InspectionType, QString> inspectionTypeToStr{
 		{BMAH::InspectionType::Initial, "初始"},
