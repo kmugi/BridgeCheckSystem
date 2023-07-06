@@ -87,3 +87,16 @@ void BTIWidget::clearEdits() {
 		edit->clear();
 	}
 }
+
+void BTIWidget::receive_BTI_info(const BTI& info) {
+	ui.lengthEdit->setText(QString::number(info.getLength(), 'f', 3));
+	ui.widthEdit->setText(QString::number(info.getWidth(), 'f', 3));
+	ui.laneWidthEdit->setText(QString::number(info.getLaneWidth(), 'f', 3));
+	ui.sidewalkWidthEdit->setText(QString::number(info.getSidewalkWidth(), 'f', 3));
+	ui.guardrailHeightEdit->setText(QString::number(info.getGuardrailHeight(), 'f', 3));
+	ui.medianWidthEdit->setText(QString::number(info.getMedianWidth(), 'f', 3));
+	ui.BVCEdit->setText(QString::number(info.getBVC(), 'f', 3));
+	ui.ABCEdit->setText(QString::number(info.getABC(), 'f', 3));
+	ui.AUCEdit->setText(QString::number(info.getAUC(), 'f', 3));
+	ui.ARWEdit->setText(QString::number(info.getARW(), 'f', 3));
+}
