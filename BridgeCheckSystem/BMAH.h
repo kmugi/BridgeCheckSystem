@@ -17,11 +17,11 @@ public:
 
 	BMAH() = delete;
 	BMAH(
-		const QDateTime assessmentTime,
+		const QDateTime& assessmentTime,
 		InspectionType type,
-		const QString result,
-		const QString remedialMeasures,
-		const QDateTime nextInspectionTime
+		const QString& result,
+		const QString& remedialMeasures,
+		const QDateTime& nextInspectionTime
 	) noexcept;
 
 	BMAH(

@@ -32,6 +32,27 @@ void BMAHDao::deleteBMAH(const QString& bridgeNumber) {
 	query.exec();
 }
 
+std::optional<BMAH> BMAHDao::queryBMAH(const QString& bridgeNumber) {
+	auto sql = QString("SELECT * FROM bmah WHERE bridgeNumber = ?;");
+	DEBUG(sql);
+
+	QSqlQuery query{};
+	query.prepare(sql);
+	query.addBindValue(bridgeNumber);
+
+	if (query.exec() && query.next()) {
+		return BMAH(
+			query.value("assessmentTime").toDateTime(),
+			static_cast<BMAH::InspectionType>(query.value("type").toInt()),
+			query.value("result").toString(),
+			query.value("remedialMeasures").toString(),
+			query.value("nextInspectionTime").toDateTime()
+		);
+	}
+
+	return std::nullopt;
+}
+
 std::optional<QDateTime> BMAHDao::queryAssessmentTime(const QString& bridgeNumber) {
 	auto sql = QString("SELECT * FROM bmah WHERE bridgeNumber = ?;");
 	DEBUG(sql);
@@ -107,6 +128,25 @@ std::optional<QDateTime> BMAHDao::queryNextInspectionTime(const QString& bridgeN
 }
 
 
+void BMAHDao::updateBMAH(const QString& bridgeNumber, const BMAH& info) {
+	auto sql = QString("UPDATE bmah SET assessmentTime = ?, type = ?, result = ?, \
+remedialMeasures = ?, nextInspectionTime = ? WHERE bridgeNumber = ?;");
+	DEBUG(sql);
+
+	QSqlQuery query{};
+	query.prepare(sql);
+	query.addBindValue(info.getAssessmentTime());
+	query.addBindValue(static_cast<int>(info.getType()));
+	query.addBindValue(info.getResult());
+	query.addBindValue(info.getRemedialMeasures());
+	query.addBindValue(info.getNextInspectionTime());
+	query.addBindValue(bridgeNumber);
+
+	bool isSuccess = query.exec();
+	if (!isSuccess) {
+		CRITICAL(QString("Failed to update data for bridge '%1'").arg(bridgeNumber));
+	}
+}
 
 
 void BMAHDao::updateAssessmentTime(const QString& bridgeNumber, const QDateTime& assessmentTime) {

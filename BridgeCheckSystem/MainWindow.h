@@ -12,8 +12,18 @@ class MainWindow : public QWidget
 	Q_OBJECT
 
 signals:
+	// to BridgeProfileWidget
 	void send_bridgeType(const QString& typeStr);
-	// TODO: 编写传输桥梁数据的信号函数
+	// to BridgeProfileWidget
+	void send_bridge_info(
+		const ADMID& amdid,
+		const BTI& bti,
+		const BSInfo& bsinfo,
+		const BRD& brd,
+		const BMAH& bmah,
+		const MDR& mdr,
+		const Other& other
+	);
 
 public:
 	MainWindow(QWidget* parent = nullptr);
@@ -23,6 +33,8 @@ public:
 
 	void on_newProfileBtn_clicked();
 	void on_showProfileBtn_clicked();
+
+	void loadAllBridgeNames();
 
 private:
 	wkeWebView webView{}; // miniblink container

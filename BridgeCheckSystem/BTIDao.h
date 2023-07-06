@@ -16,6 +16,7 @@ public:
 	static void deleteBTI(const QString& bridgeNumber);
 
 	// query
+	static std::optional<BTI> queryBTI(const QString& bridgeNumber);
 	static std::optional<float> queryLength(const QString& bridgeNumber);
 	static std::optional<float> queryWidth(const QString& bridgeNumber);
 	static std::optional<float> queryLaneWidth(const QString& bridgeNumber);
@@ -28,6 +29,7 @@ public:
 	static std::optional<float> queryARW(const QString& bridgeNumber);
 
 	// update
+	static void updateBTI(const QString& bridgeNumber, const BTI& info);
 	static void updateLength(const QString& bridgeNumber, float length);
 	static void updateWidth(const QString& bridgeNumber, float width);
 	static void updateLaneWidth(const QString& bridgeNumber, float laneWidth);

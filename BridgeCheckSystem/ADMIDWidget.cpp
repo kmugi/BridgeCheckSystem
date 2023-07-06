@@ -23,7 +23,7 @@ ADMIDWidget::ADMIDWidget(QWidget* parent)
 				return;
 			}
 
-			emit sendADMIDInfo(ADMID(
+			emit send_ADMID_Info(ADMID(
 				ui.HASCEdit->text(),
 				ui.bridgeNameEdit->text().trimmed(),
 				ui.bridgeNumberEdit->text().trimmed(),
@@ -136,4 +136,26 @@ void ADMIDWidget::clearEdits() {
 	ui.supervisoryUnitEdit->clear();
 	ui.managementUnitEdit->clear();
 	ui.ownerUnitEdit->clear();
+}
+
+void ADMIDWidget::receive_ADMID_info(const ADMID& info) {
+	qDebug() << info.getHASC();
+	ui.HASCEdit->setText(info.getHASC());
+	ui.bridgeNameEdit->setText(info.getBridgeName());
+	ui.bridgeNumberEdit->setText(info.getBridgeNumber());
+	ui.routeNameEdit->setText(info.getRouteName());
+	ui.routeNumberEdit->setText(info.getRouteNumber());
+	ui.typeEdit->setText(ADMID::typeToStr[info.getType()]);
+	ui.routeLevelEdit->setCurrentText(ADMID::routeLevelToStr[info.getRouteLevel()]);
+	ui.funcTypeEdit->setCurrentText(ADMID::functionTypeToStr[info.getFuncType()]);
+	ui.lngEdit->setText(QString::number(info.getLnglat().first));
+	ui.latEdit->setText(QString::number(info.getLnglat().second));
+	ui.buildTime->setDateTime(info.getBuildTime());
+	ui.designLoadEdit->setText(QString::number(info.getDesignLoad(), 'f', 5));
+	ui.gradeEdit->setText(QString::number(info.getGrade(), 'f', 5));
+	ui.designUnitEdit->setText(info.getDesignUnit());
+	ui.constructorUnitEdit->setText(info.getConstructorUnit());
+	ui.supervisoryUnitEdit->setText(info.getSupervisoryUnit());
+	ui.managementUnitEdit->setText(info.getManagementUnit());
+	ui.ownerUnitEdit->setText(info.getOwnerUnit());
 }

@@ -4,6 +4,7 @@
 #include <QDateTime>
 #include <optional>
 #include <QSqlQuery>
+#include <QVector>
 
 #include "ADMID.h"
 #include "Logger.hpp"
@@ -17,6 +18,8 @@ public:
 	static void deleteADMID(const QString& bridgeNumber);
 
 	// query
+	static std::optional<QVector<QString>> queryAllBridgeNames();
+	static std::optional<ADMID> queryADMID(const QString& bridgeNumber);
 	static std::optional<QString> queryBridgeNumber(const QString& bridgeName);
 	static std::optional<QString> queryBridgeName(const QString& bridgeNumber);
 	static std::optional<QString> queryRouteName(const QString& bridgeNumber);
@@ -35,6 +38,7 @@ public:
 	static std::optional<QString> queryManagementUnit(const QString& bridgeNumber);
 
 	// updata
+	static void updateADMID(const QString& bridgeNumber, const ADMID& info);
 	static void updateBridgeName(const QString& bridgeNumber, const QString& bridgeName);
 	static void updateRouteName(const QString& bridgeNumber, const QString& routeName);
 	static void updateType(const QString& bridgeNumber, ADMID::Type type);

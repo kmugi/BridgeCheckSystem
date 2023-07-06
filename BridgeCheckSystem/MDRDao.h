@@ -17,6 +17,7 @@ public:
 	static void deleteMDR(const QString& bridgeNumber);
 
 	// query
+	static std::optional<MDR> queryMDR(const QString& bridgeNumber);
 	static std::optional<QDateTime> queryTime(const QString& bridgeNumber);
 	static std::optional<MDR::RemedialActionType> queryType(const QString& bridgeNumber);
 	static std::optional<QString> queryRemedialActionReason(const QString& bridgeNumber);
@@ -26,6 +27,7 @@ public:
 	static std::optional<QString> queryRAQA(const QString& bridgeNumber);
 
 	// update
+	static void updateMDR(const QString& bridgeNumber, const MDR& info);
 	static void updateTime(const QString& bridgeNumber, const QDateTime& time);
 	static void updateType(const QString& bridgeNumber, const MDR::RemedialActionType type);
 	static void updateRemedialActionReason(const QString& bridgeNumber, const QString& remedialActionReason);

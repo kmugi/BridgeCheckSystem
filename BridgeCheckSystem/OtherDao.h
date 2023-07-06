@@ -17,11 +17,13 @@ public:
 	static void deleteOther(const QString& bridgeNumber);
 
 	// query
+	static std::optional<Other> queryOther(const QString& bridgeNumber);
 	static std::optional<QString> queryBridgeEngineer(const QString& bridgeNumber);
 	static std::optional<QString> queryCardFiller(const QString& bridgeNumber);
 	static std::optional<QDateTime> queryCardTime(const QString& bridgeNumber);
 
 	// update
+	static void updateOther(const QString& bridgeNumber, const Other& info);
 	static void updateBridgeEngineer(const QString& bridgeNumber, const QString& bridgeEngineer);
 	static void updateCardFiller(const QString& bridgeNumber, const QString& cardFiller);
 	static void updateCardTime(const QString& bridgeNumber, const QDateTime& cardTime);

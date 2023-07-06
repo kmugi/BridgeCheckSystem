@@ -1,48 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ADMIDWidgetClass</class>
- <widget class="QWidget" name="ADMIDWidgetClass">
+ <class>BSInfoWidgetClass</class>
+ <widget class="QWidget" name="BSInfoWidgetClass">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>850</width>
-    <height>740</height>
+    <height>627</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>850</width>
-    <height>740</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>1100</width>
-    <height>740</height>
-   </size>
-  </property>
   <property name="windowTitle">
-   <string>ADMIDWidget</string>
-  </property>
-  <property name="styleSheet">
-   <string notr="true">QLineEdit {
-	border-radius: 5px;
-}
-
-QComboBox {
-	border-radius: 5px;
-}
-
-QDateEdit {
-	border-radius: 5px;
-}</string>
+   <string>BSInfoWidget</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>20</y>
+     <x>50</x>
+     <y>30</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -54,33 +29,14 @@ QDateEdit {
     </font>
    </property>
    <property name="text">
-    <string>行政区划代码</string>
+    <string>主梁</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="HASCEdit">
+  <widget class="QLineEdit" name="mainGirderEdit">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>20</y>
-     <width>191</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="bridgeNameEdit">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>90</y>
+     <x>180</x>
+     <y>30</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -98,8 +54,8 @@ QDateEdit {
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>90</y>
+     <x>50</x>
+     <y>100</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -111,14 +67,14 @@ QDateEdit {
     </font>
    </property>
    <property name="text">
-    <string>桥梁名字</string>
+    <string>主拱圈</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="bridgeNumberEdit">
+  <widget class="QLineEdit" name="mainArchRibEdit">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>160</y>
+     <x>180</x>
+     <y>100</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -136,8 +92,8 @@ QDateEdit {
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>160</y>
+     <x>50</x>
+     <y>170</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -149,14 +105,14 @@ QDateEdit {
     </font>
    </property>
    <property name="text">
-    <string>桥梁编号</string>
+    <string>桥塔</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="routeNameEdit">
+  <widget class="QLineEdit" name="bridgeTowerEdit">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>230</y>
+     <x>180</x>
+     <y>170</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -174,8 +130,8 @@ QDateEdit {
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>230</y>
+     <x>50</x>
+     <y>240</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -187,14 +143,14 @@ QDateEdit {
     </font>
    </property>
    <property name="text">
-    <string>路线名称</string>
+    <string>拱上建筑</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="routeNumberEdit">
+  <widget class="QLineEdit" name="structureAboveArchEdit">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>310</y>
+     <x>180</x>
+     <y>240</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -212,7 +168,7 @@ QDateEdit {
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>50</x>
      <y>310</y>
      <width>121</width>
      <height>41</height>
@@ -225,14 +181,14 @@ QDateEdit {
     </font>
    </property>
    <property name="text">
-    <string>路线编号</string>
+    <string>主缆</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="typeEdit">
+  <widget class="QLineEdit" name="mainCableEdit">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>390</y>
+     <x>180</x>
+     <y>310</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -245,16 +201,13 @@ QDateEdit {
    </property>
    <property name="text">
     <string/>
-   </property>
-   <property name="readOnly">
-    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>390</y>
+     <x>50</x>
+     <y>380</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -266,14 +219,33 @@ QDateEdit {
     </font>
    </property>
    <property name="text">
-    <string>桥梁类别</string>
+    <string>桥面铺装</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="bridgeSurfaceCoatingEdit">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>380</y>
+     <width>191</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>等线</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>470</y>
+     <x>50</x>
+     <y>460</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -285,14 +257,109 @@ QDateEdit {
     </font>
    </property>
    <property name="text">
-    <string>路线等级</string>
+    <string>人行道</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="sidewalkEdit">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>460</y>
+     <width>191</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>等线</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="foundationEdit">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>240</y>
+     <width>191</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>等线</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="wingWallEdit">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>170</y>
+     <width>191</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>等线</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="crashBarrierEdit">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>380</y>
+     <width>191</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>等线</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="beaconEdit">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>460</y>
+     <width>191</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>等线</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>550</y>
+     <x>450</x>
+     <y>170</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -304,76 +371,14 @@ QDateEdit {
     </font>
    </property>
    <property name="text">
-    <string>功能类型</string>
+    <string>翼墙</string>
    </property>
-  </widget>
-  <widget class="QComboBox" name="routeLevelEdit">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>470</y>
-     <width>191</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <item>
-    <property name="text">
-     <string>县道</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>省道</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>国道</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QComboBox" name="funcTypeEdit">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>550</y>
-     <width>191</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <item>
-    <property name="text">
-     <string>公路</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>铁路</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>公路铁路两用</string>
-    </property>
-   </item>
   </widget>
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>20</y>
+     <x>450</x>
+     <y>240</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -385,36 +390,14 @@ QDateEdit {
     </font>
    </property>
    <property name="text">
-    <string>经度</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lngEdit">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>20</y>
-     <width>191</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="readOnly">
-    <bool>false</bool>
+    <string>基础</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>90</y>
+     <x>450</x>
+     <y>100</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -426,36 +409,14 @@ QDateEdit {
     </font>
    </property>
    <property name="text">
-    <string>纬度</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="latEdit">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>90</y>
-     <width>191</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="readOnly">
-    <bool>false</bool>
+    <string>锥坡</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>160</y>
+     <x>450</x>
+     <y>310</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -467,14 +428,33 @@ QDateEdit {
     </font>
    </property>
    <property name="text">
-    <string>建成时间</string>
+    <string>支座</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="bearingEdit">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>310</y>
+     <width>191</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>等线</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>230</y>
+     <x>450</x>
+     <y>460</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -486,36 +466,14 @@ QDateEdit {
     </font>
    </property>
    <property name="text">
-    <string>设计承载重量</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="designLoadEdit">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>230</y>
-     <width>191</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="readOnly">
-    <bool>false</bool>
+    <string>航标</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_13">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>310</y>
+     <x>450</x>
+     <y>30</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -527,14 +485,14 @@ QDateEdit {
     </font>
    </property>
    <property name="text">
-    <string>坡度</string>
+    <string>照明</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="gradeEdit">
+  <widget class="QLineEdit" name="coneSlopeEdit">
    <property name="geometry">
     <rect>
-     <x>560</x>
-     <y>310</y>
+     <x>580</x>
+     <y>100</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -547,16 +505,13 @@ QDateEdit {
    </property>
    <property name="text">
     <string/>
-   </property>
-   <property name="readOnly">
-    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_14">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>390</y>
+     <x>450</x>
+     <y>380</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -568,14 +523,14 @@ QDateEdit {
     </font>
    </property>
    <property name="text">
-    <string>设计单位</string>
+    <string>防撞设施</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="designUnitEdit">
+  <widget class="QLineEdit" name="lightingEdit">
    <property name="geometry">
     <rect>
-     <x>560</x>
-     <y>390</y>
+     <x>580</x>
+     <y>30</y>
      <width>191</width>
      <height>40</height>
     </rect>
@@ -588,180 +543,13 @@ QDateEdit {
    </property>
    <property name="text">
     <string/>
-   </property>
-   <property name="readOnly">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_15">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>470</y>
-     <width>121</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>施工单位</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="constructorUnitEdit">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>470</y>
-     <width>191</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="readOnly">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_16">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>550</y>
-     <width>121</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>监理单位</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="supervisoryUnitEdit">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>550</y>
-     <width>191</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="readOnly">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_17">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>620</y>
-     <width>121</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>业主单位</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="ownerUnitEdit">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>620</y>
-     <width>191</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="readOnly">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_18">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>620</y>
-     <width>121</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>管养单位</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="managementUnitEdit">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>620</y>
-     <width>191</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="readOnly">
-    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="saveBtn">
    <property name="geometry">
     <rect>
      <x>200</x>
-     <y>680</y>
+     <y>550</y>
      <width>151</width>
      <height>41</height>
     </rect>
@@ -779,8 +567,8 @@ QDateEdit {
   <widget class="QPushButton" name="exitBtn">
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>680</y>
+     <x>460</x>
+     <y>550</y>
      <width>151</width>
      <height>41</height>
     </rect>
@@ -793,22 +581,6 @@ QDateEdit {
    </property>
    <property name="text">
     <string>退出</string>
-   </property>
-  </widget>
-  <widget class="QDateEdit" name="buildTime">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>160</y>
-     <width>191</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>等线</family>
-     <pointsize>16</pointsize>
-    </font>
    </property>
   </widget>
  </widget>
