@@ -221,20 +221,6 @@ void BRDDao::updateDesignDrawings(const QString& bridgeNumber, BRD::BRDType desi
 	}
 }
 
-void BRDDao::updateDesignDrawings(const QString& bridgeNumber, BRD::BRDType designDrawings) {
-    auto sql = QString("UPDATE brd SET designDrawings = ? WHERE bridgeNumber = ?;");
-    DEBUG(sql);
-
-    QSqlQuery query{};
-    query.prepare(sql);
-    query.addBindValue(static_cast<int>(designDrawings));
-    query.addBindValue(bridgeNumber);
-
-    bool flag = query.exec();
-    if (!flag) {
-        CRITICAL(QString("Failed to update design drawings '%1'").arg(static_cast<int>(designDrawings)));
-    }
-}
 
 void BRDDao::updateDesignDoc(const QString& bridgeNumber, BRD::BRDType designDoc) {
     auto sql = QString("UPDATE brd SET designDoc = ? WHERE bridgeNumber = ?;");

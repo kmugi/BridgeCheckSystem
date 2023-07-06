@@ -271,20 +271,7 @@ void BSInfoDao::updateMainGirder(const QString& bridgeNumber, const QString& mai
 	}
 }
 
-void BSInfoDao::updateMainGirder(const QString& bridgeNumber, const QString& mainGirder) {
-    auto sql = QString("UPDATE bsinfo SET mainGirder = ? WHERE bridgeNumber = ?;");
-    DEBUG(sql);
 
-    QSqlQuery query{};
-    query.prepare(sql);
-    query.addBindValue(mainGirder);
-    query.addBindValue(bridgeNumber);
-
-    bool flag = query.exec();
-    if (!flag) {
-        CRITICAL(QString("Failed to update '%1'").arg(mainGirder));
-    }
-}
 
 void BSInfoDao::updateMainArchRib(const QString& bridgeNumber, const QString& mainArchRib) {
     auto sql = QString("UPDATE bsinfo SET mainArchRib = ? WHERE bridgeNumber = ?;");
