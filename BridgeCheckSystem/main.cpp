@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 
 	// load qss
 	QString qss{};
-	QFile qssFile{ "F:/Demo/project/BridgeCheckSystem/BridgeCheckSystem/qss/Ubuntu.qss" };
+	QFile qssFile{ "H:\\QTprogarm\\BridgeCheckSystem\\BridgeCheckSystem\\BridgeCheckSystem\\qss\\Ubuntu.qss" };
 	qssFile.open(QIODeviceBase::ReadOnly);
 	if (qssFile.isOpen()) {
 		qss = QLatin1String(qssFile.readAll());
@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
 	}
 
 	// load wke dll and initialize
-	wkeSetWkeDllPath(L"F:/Demo/project/BridgeCheckSystem/BridgeCheckSystem/miniblink_4975_x64.dll");
+	wkeSetWkeDllPath(L"H:\\QTprogarm\\BridgeCheckSystem\\BridgeCheckSystem\\BridgeCheckSystem\\miniblink_4975_x64.dll");
 	wkeInit();
 
 	Login w;

@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget* parent)
 }
 
 void MainWindow::showAmap() {
-	const QString mapPath = "F:/Demo/project/BridgeCheckSystem/BridgeCheckSystem/amap/amap.html";
+	const QString mapPath = "H:\\QTprogarm\\BridgeCheckSystem\\BridgeCheckSystem\\BridgeCheckSystem\\amap\\amap.html";
 	webView = wkeCreateWebWindow(WKE_WINDOW_TYPE_CONTROL, (HWND)ui.mapWidget->winId(), 0, 0, 1100, 800);
 	wkeShowWindow(webView, TRUE);
 	QFile file(mapPath);
