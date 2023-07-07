@@ -3,13 +3,11 @@
 #include <QWidget>
 #include "ui_ADMIDWidget.h"
 
-#include <optional>
 #include <QValidator>
 #include <QRegularExpressionValidator>
 #include <QList>
 #include <QMessageBox>
 #include <QCloseEvent>
-#include <QMetaType>
 
 #include "ADMID.h"
 
@@ -19,7 +17,7 @@ class ADMIDWidget : public QWidget
 
 signals:
 	// to BridgeProfileWidget
-	void sendADMIDInfo(const ADMID& info);
+	void send_ADMID_Info(const ADMID& info);
 
 public:
 	ADMIDWidget(QWidget* parent = nullptr);
@@ -36,6 +34,8 @@ public:
 	void closeEvent(QCloseEvent* event);
 
 	void clearEdits();
+
+	void receive_ADMID_info(const ADMID& info);
 
 private:
 	Ui::ADMIDWidgetClass ui;

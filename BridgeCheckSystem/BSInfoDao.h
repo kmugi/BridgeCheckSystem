@@ -16,6 +16,7 @@ public:
 	static void deleteBSInfo(const QString& bridgeNumber);
 
 	// query
+	static std::optional<BSInfo> queryBSInfo(const QString& bridgeNumber);
 	static std::optional<QString> queryMainGirder(const QString& bridgeNumber);
 	static std::optional<QString> queryMainArchRib(const QString& bridgeNumber);
 	static std::optional<QString> queryBridgeTower(const QString& bridgeNumber);
@@ -32,6 +33,7 @@ public:
 	static std::optional<QString> queryBeacon(const QString& bridgeNumber);
 
 	// update
+	static void updateBSInfo(const QString& bridgeNumber, const BSInfo& info);
 	static void updateMainGirder(const QString& bridgeNumber, const QString& mainGirder);
 	static void updateMainArchRib(const QString& bridgeNumber, const QString& mainArchRib);
 	static void updateBridgeTower(const QString& bridgeNumber, const QString& bridgeTower);

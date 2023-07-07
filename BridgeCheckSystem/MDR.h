@@ -77,7 +77,7 @@ public:
 
 private:
 	QDateTime time_;
-	RemedialActionType type_;
+	RemedialActionType type_;			// 处治类别
 	QString remedialActionReason_;		// 处治原因
 	QString remedialActionScope_;		// 处治范围
 	uint32_t projectCost_;				// 工程费用(w)

@@ -16,8 +16,8 @@ public:
 
 	// 档案形式
 	enum class ArchiveType {
-		PaperBased = 0,
-		Electronic,
+		PaperBased = 1 << 0,
+		Electronic = 1 << 1,
 	};
 
 public:

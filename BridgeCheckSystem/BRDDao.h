@@ -17,6 +17,7 @@ public:
 	static void deleteBRD(const QString& bridgeNumber);
 
 	// query
+	static std::optional<BRD> queryBRD(const QString& bridgeNumber);
 	static std::optional<BRD::BRDType> queryDesignDrawings(const QString& bridgeNumber);
 	static std::optional<BRD::BRDType> queryDesignDoc(const QString& bridgeNumber);
 	static std::optional<BRD::BRDType> queryRecordDrawings(const QString& bridgeNumber);
@@ -30,6 +31,7 @@ public:
 	static std::optional<QDateTime> queryFilingDate(const QString& bridgeNumber);
 
 	// update
+	static void updateBRD(const QString& bridgeNumber, const BRD& brd);
 	static void updateDesignDrawings(const QString& bridgeNumber, BRD::BRDType designDrawings);
 	static void updateDesignDoc(const QString& bridgeNumber, BRD::BRDType designDoc);
 	static void updateRecordDrawings(const QString& bridgeNumber, BRD::BRDType recordDrawings);

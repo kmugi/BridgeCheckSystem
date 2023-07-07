@@ -29,6 +29,25 @@ void OtherDao::deleteOther(const QString& bridgeNumber) {
 	query.exec();
 }
 
+std::optional<Other> OtherDao::queryOther(const QString& bridgeNumber) {
+	auto sql = QString("SELECT * FROM other WHERE bridgeNumber = ?;");
+	DEBUG(sql);
+
+	QSqlQuery query{};
+	query.prepare(sql);
+	query.addBindValue(bridgeNumber);
+
+	if (query.exec() && query.next()) {
+		return Other(
+			query.value("bridgeEngineer").toString(),
+			query.value("cardFiller").toString(),
+			query.value("cardTime").toDateTime()
+		);
+	}
+
+	return std::nullopt;
+}
+
 std::optional<QString> OtherDao::queryBridgeEngineer(const QString& bridgeNumber) {
 	auto sql = QString("SELECT * FROM other WHERE bridgeNumber = ?;");
 	DEBUG(sql);
@@ -72,6 +91,23 @@ std::optional<QDateTime> OtherDao::queryCardTime(const QString& bridgeNumber) {
 	}
 
 	return std::nullopt;
+}
+
+void OtherDao::updateOther(const QString& bridgeNumber, const Other& info) {
+	auto sql = QString("UPDATE other SET bridgeEngineer = ?, cardFiller = ?, cardTime = ? WHERE bridgeNumber = ?;");
+	DEBUG(sql);
+
+	QSqlQuery query{};
+	query.prepare(sql);
+	query.addBindValue(info.getBridgeEngineer());
+	query.addBindValue(info.getCardFiller());
+	query.addBindValue(info.getCardTime());
+	query.addBindValue(bridgeNumber);
+
+	bool isSuccess = query.exec();
+	if (!isSuccess) {
+		CRITICAL(QString("Failed to update data for bridge '%1'").arg(bridgeNumber));
+	}
 }
 
 

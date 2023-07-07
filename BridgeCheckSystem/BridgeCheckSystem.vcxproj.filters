@@ -94,6 +94,24 @@
     <ClCompile Include="OtherDao.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BTIWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BSInfoWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BRDWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BMAHWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MDRWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OtherWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ADMID.h">
@@ -164,6 +182,24 @@
     <QtMoc Include="ADMIDWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="BTIWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="BSInfoWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="BRDWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="BMAHWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="MDRWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="OtherWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="MainWindow.ui">
@@ -173,6 +209,24 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="ADMIDWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="BTIWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="BSInfoWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="BRDWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="BMAHWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="MDRWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="OtherWidget.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
